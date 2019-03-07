@@ -1,0 +1,52 @@
+{% extends 'head.html' %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>:: New Card ::</title>
+  </head>
+  {%block contents%}
+  <body>
+
+    <div class="container" style="margin-top: 100px;  ">
+      <!-- Default form contact -->
+      <form class="text-center border border-light p-5" action="{%url 'create'%}" method="POST">
+
+          <p class="h4 mb-4" style="color: orange;">사랑하는 사람에게 따뜻한 말 한마디로 행복과 추억을 공유해요.</p>
+          {% csrf_token %}
+          <input type="text" name="to" id="defaultContactFormName" class="form-control mb-4" placeholder="받는사람">
+          <input type="text" name="From" id="defaultContactFormName" class="form-control mb-4" placeholder="보내는사람">
+          <!-- title -->
+          <input type="text" name="title" id="defaultContactFormName" class="form-control mb-4" placeholder="제목">
+
+          <!-- Content -->
+          <div class="form-group">
+              <textarea class="form-control rounded-0" name="content" id="exampleFormControlTextarea2" rows="10" placeholder="내용"></textarea>
+          </div>
+
+          <!-- Content -->
+          <input type="file" name="img" id="defaultContactFormEmail" class="form-control mb-4">
+
+          <!-- Send button -->
+          <input type="submit" class="btn btn-info btn-warning" value="Create">
+
+      </form>
+    </div>
+
+    <!-- Default form contact -->
+
+
+    <!-- <div class="container" style="margin-top: 100px; ">
+      <form class="md-form" action="{%url 'create'%}" method="POST">
+        <input type="text" name="title" value="제목">
+        <br>
+        <input type="text" name="content" value="내용">
+        <br>
+        <input type="file" name="img" value="사진첨부">
+        <br>
+        <input type="button" class="" value="Create">
+      </form>
+    </div> -->
+  </body>
+  {%endblock%}
+</html>

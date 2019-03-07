@@ -1,0 +1,21 @@
+{% extends 'head.html' %}
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>:: details Detail ::</title>
+  </head>
+  <body>
+    {%block contents%}
+    <br><br><br><br>
+    
+    <div class="container">
+      <p>{{details.to}}</p>
+      <p>{{details.From}}</p>
+      <p>{{details.title}}</p>
+      <p>{{details.content}}</p>
+      <img src="{{details.img.url}}" height="300" alt=" Card image cap">
+      <p>{{details.pub_date}}</p>
+    </div>
+    {%endblock%}
+  </body>
+</html>

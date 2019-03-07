@@ -1,0 +1,59 @@
+{% extends 'head.html' %}
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+      <title>:: 회원가입 ::</title>
+    </head>
+
+    <body>
+    {%block contents%}
+    <div class="container">
+      <br><br>
+      <br>
+      <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+          <div class="card card-signin my-5">
+            <div class="card-body">
+              <h2 class="card-title text-center">Sign up</h5>
+              <form method="POST" action="{% url 'signup' %}" class="form-signin">
+                {% csrf_token%}
+                <div class="form-label-group">
+                  <label for="inputEmail">Username</label>
+                  <input type="username" name="username" id="inputEmail" class="form-control" placeholder="Username" required autofocus>
+                </div>
+
+                <div class="form-label-group">
+                  <label for="inputEmail">First_name</label>
+                  <input type="username" name="First_name" id="inputEmail" class="form-control" placeholder="Username" required autofocus>
+                </div>
+
+                <div class="form-label-group">
+                  <label for="inputEmail">Last_name</label>
+                  <input type="username" name="Last_name" id="inputEmail" class="form-control" placeholder="Username" required autofocus>
+                </div>
+
+                <div class="form-label-group">
+                  <label for="inputPassword">Password</label>
+                  <input type="password" name="password1" id="inputPassword" class="form-control" placeholder="Password" required>
+                </div>
+
+                <div class="form-label-group">
+                  <label for="inputPassword">Confirmation-Password</label>
+                  <input type="password" name="password2" id="inputPassword" class="form-control" placeholder="Confirmation-Password" required>
+                </div>
+
+                <br>
+                <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign up</button>
+              </form>
+
+              <hr class="my-4">
+              <button class="btn btn-lg btn-warning btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign in with Google</button>
+              <button class="btn btn-lg btn-success btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Sign in with Facebook</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      {%endblock%}
+  </body>
+</html>

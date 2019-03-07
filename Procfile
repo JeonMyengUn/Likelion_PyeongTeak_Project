@@ -1,0 +1,1 @@
+web: gunicorn PTU_TeamProject.wsgi --log-file -
